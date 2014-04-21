@@ -1,12 +1,5 @@
 #!/bin/bash
 
-sudo pacman -Syu
-sudo pacman -Sy subtle git rxvt-unicode feh ncmpcpp libconfig asciidoc mpd
-gem install archive-tar-minitar
-
-sur install clock2
-sur install mpd
-
 echo "Rxvt*foreground: #f2f2f2" > ~/.Xresources
 echo "Rxvt*background: #101010" >> ~/.Xresources
 echo "Rxvt*scrollbar: false" >> ~/.Xresources
@@ -49,5 +42,3 @@ echo "Rxvt*color12:    #b6defb" >> ~/.Xresources
 echo "Rxvt*color13:    #fba1fb" >> ~/.Xresources
 echo "Rxvt*color14:    #d7d9fc" >> ~/.Xresources
 echo "Rxvt*color15:    #e2e2e2" >> ~/.Xresources
-
-ln -s $HOME/.scripts/subtle.rb $HOME/.config/subtle.rb
