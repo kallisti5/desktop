@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Installing packages..."
+if [ ! $(which pacman) ]; then
+	exit 0
+fi
+
+echo "Installing ArchLinux packages..."
 
 sudo pacman -Syu
 sudo pacman -Sy subtle git rxvt-unicode feh ncmpcpp libconfig asciidoc mpd ruby
