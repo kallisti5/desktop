@@ -318,9 +318,8 @@
     grab "W-S-s",   :WindowStick
      
     # Shortcuts
-    grab "W-Return",             "urxvt -name terminal|urxvtc -name terminal"
-    #grab "W-Return",             "urxvtc -name terminal"
-	grab "W-s",		"/opt/sublime_text_3/sublime_text"
+    grab "W-Return",             "urxvtc -name terminal"
+	grab "W-s",                  "/opt/sublime_text_3/sublime_text"
     grab "W-w",                  "firefox"
     grab "W-v",                  "urxvtc -name vim -e vim"
     grab "W-g",                  "steam"
@@ -507,16 +506,16 @@
 
 # Autostart
 	on :start do
-	#	Subtlext::Subtle.spawn "subtler -r"
-	#	Subtlext::Subtle.spawn "numlockx"
-	#	Subtlext::Subtle.spawn "urxvtd"
-	#	Subtlext::Subtle.spawn "compton -i 0.9 --focus-exclude 'height = 17 --vsync opengl'"
-		Subtlext::Subtle.spawn "feh --bg-center Pictures/wallpaper.jpg"
-	#	Subtlext::Subtle.spawn "sleep 5s && urxvtc -name starttwitter -e ttytter -ansi"
-		Subtlext::Subtle.spawn "sleep 1s && urxvtc -name startmusic -e ncmpcpp"
-		Subtlext::Subtle.spawn "sleep 1s && urxvtc -name startterminal"
-	#	Subtlext::Subtle.spawn "sleep 1s && urxvtc -name startfiles -e ranger"
-	#	Subtlext::Subtle.spawn "sleep 1s && urxvtc -name startmixer -e alsamixer"
+		Subtlext::Client.spawn "subtler -r"
+	#	Subtlext::Client.spawn "numlockx"
+		Subtlext::Client.spawn "urxvtd"
+	#	Subtlext::Client.spawn "compton -i 0.9 --focus-exclude 'height = 17 --vsync opengl'"
+		Subtlext::Client.spawn "feh --bg-center Pictures/wallpaper.jpg"
+	#	Subtlext::Client.spawn "sleep 5s && urxvtc -name starttwitter -e ttytter -ansi"
+		Subtlext::Client.spawn "sleep 1s && urxvtc -name startmusic -e ncmpcpp"
+		Subtlext::Client.spawn "sleep 1s && urxvtc -name startterminal"
+	#	Subtlext::Client.spawn "sleep 1s && urxvtc -name startfiles -e ranger"
+	#	Subtlext::Client.spawn "sleep 1s && urxvtc -name startmixer -e alsamixer"
 	end 
 
 # Client autofocus
