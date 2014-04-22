@@ -7,7 +7,7 @@ fi
 echo "Installing Debian packages..."
 
 sudo apt-get update
-sudo apt-get install subtle git rxvt-unicode feh ncmpcpp libconfig asciidoc mpd ruby
+sudo apt-get install subtle git rxvt-unicode feh ncmpcpp asciidoc mpd ruby
 gem install archive-tar-minitar
 
 sur install clock2
