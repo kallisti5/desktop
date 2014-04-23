@@ -42,3 +42,7 @@ echo "Rxvt*color12:    #b6defb" >> ~/.Xresources
 echo "Rxvt*color13:    #fba1fb" >> ~/.Xresources
 echo "Rxvt*color14:    #d7d9fc" >> ~/.Xresources
 echo "Rxvt*color15:    #e2e2e2" >> ~/.Xresources
+
+echo "Rxvt.perl-ext-common:	default,clipboard,url-select,keyboard-select" >> ~/.Xresources
+echo "Rxvt.url-select.underline: true" >> ~/.Xresources
+
