@@ -1,7 +1,3 @@
-### Alexis V.'s Subtle configuration "Blue Touch"
-### Based on Graawr's Classy Touch
-### Last updated 27/08/2013
-
 ## General options
     
     set :step,              10 
@@ -44,12 +40,37 @@
     color_dark =     "#303030"
 
 ## Styles
-    
     style :all do
-      padding      2, 2, 2, 2
-      margin       0, 0, 0, 0
-      icon         color_light
-      font         "xft:Ohsnap:pixelsize=12:antialias=false"
+      background  "#202020"
+      icon        "#757575"
+      border      "#303030", 0
+      padding     0, 3
+      #font        "*-*-*-*-*-*-12-*-*-*-*-*-*-*"
+      font        "xft:terminus-8"
+      #font         "xft:Ohsnap:pixelsize=12:antialias=false"
+    end
+
+    # Style for the all views
+    style :views do
+      foreground  "#757575"
+    
+      # Style for the active views
+      style :focus do
+        foreground  "#fecf35"
+        icon        "#FFFF00"
+      end
+    
+      # Style for urgent window titles and views
+      style :urgent do
+        foreground  "#ff9800"
+        icon        "#FF0000"
+      end
+    
+      # Style for occupied views (views with clients)
+      style :occupied do
+        foreground  "#b8b8b8"
+        icon        "#00BFFF"
+      end
     end
 
     style :subtle do
@@ -93,42 +114,6 @@
       font         "xft:Ohsnap:pixelsize=10:antialias=false"
     end
      
-    style :views do
-      padding      1, 5, 2, 5
-      margin       0, 0, 0, 0
-      foreground   color_medium
-      background   background_1
-      icon         color_dark
-      font         "xft:Ohsnap:pixelsize=10:antialias=false"
-
-        style :urgent do
-          padding       1, 5, 2, 5
-          margin        0, 0, 0, 0
-          foreground    color_above
-          background    background_1
-          icon          color_above
-          font          "xft:Ohsnap:pixelsize=12:antialias=false"
-        end
-         
-        style :occupied do
-          padding       1, 5, 2, 5
-          margin        0, 0, 0, 0
-          foreground    color_above
-          background    background_1
-          icon          color_medium
-          font          "xft:Ohsnap:pixelsize=10:antialias=false"
-        end
-    
-        style :focus do
-          padding       1, 5, 2, 5
-          margin        0, 0, 0, 0
-          foreground    color_above
-          background    color_light
-          icon          color_light
-          font          "xft:Ohsnap:pixelsize=10:antialias=false"
-        end
-    end     
-   
 ## Gravities
      
     # Top left
@@ -287,7 +272,15 @@
             end
         end
     end
-    
+
+    grab "W-1",     :ViewSwitch1
+    grab "W-2",     :ViewSwitch2
+    grab "W-3",     :ViewSwitch3
+    grab "W-4",     :ViewSwitch4
+    grab "W-5",     :ViewSwitch5
+    grab "W-6",     :ViewSwitch6
+    grab "W-7",     :ViewSwitch6
+
     # Subtle actions 
     grab "W-C-r",   :SubtleReload
     grab "W-A-r",   :SubtleRestart
@@ -318,15 +311,14 @@
     grab "W-S-s",   :WindowStick
      
     # Shortcuts
-    grab "W-Return",             "urxvtc -name terminal"
-	grab "W-s",                  "/opt/sublime_text_3/sublime_text"
+    grab "W-Return",             "rxvt -name terminal"
+	grab "W-s",                  "sublime_text"
     grab "W-w",                  "firefox"
-    grab "W-v",                  "urxvtc -name vim -e vim"
+    grab "W-v",                  "rxvtc -name vim -e vim"
     grab "W-g",                  "steam"
     grab "W-m",                  "thunderbird"
     grab "W-i",                  "gimp"
     grab "W-a",                  "skype"
-    grab "W-e",                  "ekiga"
     grab "W-z",                  "filezilla"
 
     # Screen capture
@@ -452,31 +444,50 @@
     end
 
 ## Views
+
+    iconpath = "#{ENV["HOME"]}/.scripts/icons"
+	icons = true
      
     view "main" do
       match "terms|starttwitter|startmusic|startterminal|startfiles|startmixer"
+      icon Subtlext::Icon.new("#{iconpath}/terminal.xbm")
+      icon_only true
     end
 
-    view "vim" do
-      match "vim"
-      dynamic true
+    view "edit" do
+      match "vim|sublime_text"
+      icon Subtlext::Icon.new("#{iconpath}/edit1.xbm")
+      icon_only true
     end
      
     view "web" do
       match "web|web_full|flash"
+      icon Subtlext::Icon.new("#{iconpath}/fox.xbm")
+      icon_only true
     end
 
     view "msg" do
       match "msg|msg_full|mail"
+      icon Subtlext::Icon.new("#{iconpath}/mail.xbm")
+      icon_only true
     end
-     
+
+    view "fun" do
+      match "steam|minecraft"
+      icon Subtlext::Icon.new("#{iconpath}/game.xbm")
+      icon_only true
+    end
+
     view "media" do
-      match "media|media_full|gimp_*|steam|minecraft"
+      match "media|media_full|gimp_*"
+      icon Subtlext::Icon.new("#{iconpath}/paint.xbm")
+      icon_only true
     end
 
     view "other" do
       match "default|<unknown>"
-      dynamic true
+      icon Subtlext::Icon.new("#{iconpath}/question.xbm")
+      icon_only true
     end
      
 ## Sublets
@@ -507,23 +518,17 @@
 # Autostart
 	on :start do
 		Subtlext::Client.spawn "subtler -r"
-	#	Subtlext::Client.spawn "numlockx"
-		Subtlext::Client.spawn "urxvtd"
 	#	Subtlext::Client.spawn "compton -i 0.9 --focus-exclude 'height = 17 --vsync opengl'"
 		Subtlext::Client.spawn "feh --bg-center Pictures/wallpaper.jpg"
-	#	Subtlext::Client.spawn "sleep 5s && urxvtc -name starttwitter -e ttytter -ansi"
-		Subtlext::Client.spawn "sleep 1s && urxvtc -name startmusic -e ncmpcpp"
-		Subtlext::Client.spawn "sleep 1s && urxvtc -name startterminal"
-	#	Subtlext::Client.spawn "sleep 1s && urxvtc -name startfiles -e ranger"
-	#	Subtlext::Client.spawn "sleep 1s && urxvtc -name startmixer -e alsamixer"
+		Subtlext::Client.spawn "sleep 1s && rxvt -name startmusic -e ncmpcpp"
+		Subtlext::Client.spawn "sleep 1s && rxvt -name startterminal"
 	end 
 
 # Client autofocus
-#	on :client_create do |c|
-#		c.views.first.jump
-#		c.focus
-#		c.raise
-#	end
+	on :client_create do |c|
+		c.views.first.jump
+		c.focus
+		c.raise
+	end
   
 ### End of configuration file
-### Please feel free about telling me if you like it and getting me notified of your using and eventual editings :)
