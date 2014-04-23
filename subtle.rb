@@ -21,7 +21,7 @@
       bottom  [ ]
     end
     screen 2 do
-      top     [ ]
+      top     [ :views, :seperator, :title, :spacer, :mpd, :clock2 ]
       bottom  [ ]
     end
 
