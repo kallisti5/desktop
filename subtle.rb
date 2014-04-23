@@ -299,10 +299,10 @@
     grab "W-C-Down",:WindowResizeDown
     grab "W-C-Left",:WindowResizeLeft
 
-    grab "W-h",     :WindowLeft
-    grab "W-j",     :WindowDown
-    grab "W-k",     :WindowUp
-    grab "W-l",     :WindowRight
+#    grab "W-h",     :WindowLeft
+#    grab "W-j",     :WindowDown
+#    grab "W-k",     :WindowUp
+#    grab "W-l",     :WindowRight
 #    grab "W-r",     :WindowRaise
 #    grab "W-s",     :WindowLower
     grab "W-q",     :WindowKill
@@ -320,6 +320,7 @@
     grab "W-i",                  "gimp"
     grab "W-a",                  "skype"
     grab "W-z",                  "filezilla"
+    grab "W-l",                  "sleep 1 && xset dpms force off"
 
     # Screen capture
     grab "Print",		 "cd ~/Pictures && scrot && cd ~"
