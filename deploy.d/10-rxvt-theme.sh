@@ -15,13 +15,13 @@ echo "! color5    purple" >> ~/.Xresources
 echo "! color6    cyan" >> ~/.Xresources
 echo "! color7    white" >> ~/.Xresources
 
-echo "Rxvt*color0:    #6c6c6c" >> ~/.Xresources
-echo "Rxvt*color1:    #e9897c" >> ~/.Xresources
-echo "Rxvt*color2:    #b6e77d" >> ~/.Xresources
-echo "Rxvt*color3:    #ecebbe" >> ~/.Xresources
-echo "Rxvt*color4:    #a9cdeb" >> ~/.Xresources
-echo "Rxvt*color5:    #ea96eb" >> ~/.Xresources
-echo "Rxvt*color6:    #c9caec" >> ~/.Xresources
+echo "Rxvt*color0:    #303030" >> ~/.Xresources
+echo "Rxvt*color1:    #e1321a" >> ~/.Xresources
+echo "Rxvt*color2:    #6ab017" >> ~/.Xresources
+echo "Rxvt*color3:    #ffc005" >> ~/.Xresources
+echo "Rxvt*color4:    #004f9e" >> ~/.Xresources
+echo "Rxvt*color5:    #ec0048" >> ~/.Xresources
+echo "Rxvt*color6:    #2aa7e7" >> ~/.Xresources
 echo "Rxvt*color7:    #f2f2f2" >> ~/.Xresources
 
 echo "! Light" >> ~/.Xresources
@@ -34,15 +34,14 @@ echo "! color13    purple" >> ~/.Xresources
 echo "! color14    cyan" >> ~/.Xresources
 echo "! color15    white" >> ~/.Xresources
 
-echo "Rxvt*color8:    #747474" >> ~/.Xresources
-echo "Rxvt*color9:    #f99286" >> ~/.Xresources
-echo "Rxvt*color10:    #c3f786" >> ~/.Xresources
-echo "Rxvt*color11:    #fcfbcc" >> ~/.Xresources
-echo "Rxvt*color12:    #b6defb" >> ~/.Xresources
-echo "Rxvt*color13:    #fba1fb" >> ~/.Xresources
-echo "Rxvt*color14:    #d7d9fc" >> ~/.Xresources
-echo "Rxvt*color15:    #e2e2e2" >> ~/.Xresources
+echo "Rxvt*color8:    #5d5d5d" >> ~/.Xresources
+echo "Rxvt*color9:    #ff361e" >> ~/.Xresources
+echo "Rxvt*color10:    #7bc91f" >> ~/.Xresources
+echo "Rxvt*color11:    #ffd00a" >> ~/.Xresources
+echo "Rxvt*color12:    #0071ff" >> ~/.Xresources
+echo "Rxvt*color13:    #ff1d62" >> ~/.Xresources
+echo "Rxvt*color14:    #4bb8fd" >> ~/.Xresources
+echo "Rxvt*color15:    #a020f0" >> ~/.Xresources
 
 echo "Rxvt.perl-ext-common:	default,clipboard,url-select,keyboard-select" >> ~/.Xresources
 echo "Rxvt.url-select.underline: true" >> ~/.Xresources
-
